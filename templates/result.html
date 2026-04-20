@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+
+<style>
+body {
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.approved {
+    color: green;
+}
+
+.rejected {
+    color: red;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    background: #0072ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+    <h2 class="{{ 'approved' if 'Approved' in result else 'rejected' }}">
+        {{ result }}
+    </h2>
+
+    {% if confidence %}
+        <h3>Confidence: {{ confidence }}%</h3>
+    {% endif %}
+
+    <a href="/">Try Again</a>
+</div>
+
+</body>
+</html>

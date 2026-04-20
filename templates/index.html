@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Loan Approval AI</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    color: #333;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #1d2671;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #1d2671;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1d2671;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c33764;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Loan Approval AI</h1>
+    <p>Enter your details to check loan eligibility</p>
+
+    <form action="/predict" method="post">
+
+        <label>Dependents</label>
+        <input type="number" name="no_of_dependents" required>
+
+        <label>Education</label>
+        <select name="education">
+            <option value="0">Graduate</option>
+            <option value="1">Not Graduate</option>
+        </select>
+
+        <label>Self Employed</label>
+        <select name="self_employed">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label>Annual Income</label>
+        <input type="number" name="income_annum" required>
+
+        <label>Loan Amount</label>
+        <input type="number" name="loan_amount" required>
+
+        <label>Loan Term (Months)</label>
+        <input type="number" name="loan_term" required>
+
+        <label>CIBIL Score</label>
+        <input type="number" name="cibil_score" required>
+
+        <label>Residential Assets</label>
+        <input type="number" name="residential_assets_value" required>
+
+        <label>Commercial Assets</label>
+        <input type="number" name="commercial_assets_value" required>
+
+        <label>Luxury Assets</label>
+        <input type="number" name="luxury_assets_value" required>
+
+        <label>Bank Assets</label>
+        <input type="number" name="bank_asset_value" required>
+
+        <button type="submit">Check Loan Status</button>
+
+    </form>
+</div>
+
+</body>
+</html>
